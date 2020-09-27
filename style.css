@@ -1,0 +1,313 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: Helvetica;
+}
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: relative;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  animation: rotate-center 0.6s ease-in-out both;
+}
+
+@keyframes rotate-center {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*navbar*/
+
+nav {
+  width: 100%;
+  height: 80px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 5px 0 8px #3a3a3a;
+  background: rgb(200, 197, 194);
+  background: linear-gradient(
+    90deg,
+    rgba(200, 197, 194, 1) 48%,
+    rgba(126, 129, 136, 1) 66%,
+    rgba(117, 117, 125, 1) 100%
+  );
+  margin-top: 15px;
+  animation: navbar 5s ease-out both;
+  -webkit-animation: navbar 5s ease-out both;
+}
+@keyframes navbar {
+  0% {
+    transform: scale(1.2) translateY(0);
+    transform-origin: 50% 16%;
+  }
+  100% {
+    transform: scale(1) translateY(-8px);
+    transform-origin: bottom;
+  }
+}
+nav ul li {
+  display: inline-block;
+  list-style: none;
+}
+
+nav .item {
+  margin: 0 25px;
+  padding: 10px 0;
+}
+
+.item a {
+  color: black;
+}
+
+.item a:hover {
+  color: rgb(26, 80, 230);
+}
+
+.fa {
+  margin-right: 10px;
+  color: lightblue;
+}
+.fa:hover {
+  transform: scale(1.6);
+  color: rgb(134, 12, 114);
+}
+
+.fa-caret-down {
+  float: right;
+  padding: 7px;
+}
+
+.item:hover a .fa:not(.fa-angle-down) {
+  transform: scale(1.7);
+  color: #92a1f6;
+}
+.sub-menu-1 {
+  display: none;
+}
+.item:nth-child(2),
+.item:nth-child(3) {
+  position: relative;
+}
+.item:hover .sub-menu-1 {
+  display: block;
+  width: 200px;
+  background: #f5f5f5;
+  box-shadow: 5px 5px 10px #b80c0c;
+  position: absolute;
+  top: 36px;
+  left: 0;
+  z-index: 10;
+}
+.item:hover .sub-menu-1 ul {
+  display: block;
+  margin: 20px;
+}
+.item:hover .sub-menu-1 ul li {
+  padding: 10px 0;
+  width: 100%;
+  border-bottom: 1px solid rgba(4, 250, 57, 0.3);
+}
+.item:hover .sub-menu-1 ul li:last-child {
+  border-bottom: none;
+}
+.sub-menu-1 ul li:hover > a {
+  color: #ee6f6f;
+}
+.fa-angle-right {
+  float: right;
+}
+.sub-menu-2 {
+  display: none;
+  z-index: 10;
+}
+.hover-me {
+  position: relative;
+}
+.hover-me:hover .sub-menu-2 {
+  display: block;
+  background: #f5f5f5;
+  box-shadow: 5px 5px 10px #b80c0c;
+  width: 200px;
+  position: absolute;
+  right: -200px;
+  top: 0;
+}
+/*banner*/
+.banner {
+  width: 100%;
+  height: calc(100vh - 90px);
+  background: rgb(200, 197, 194);
+  background: radial-gradient(
+    circle,
+    rgba(200, 197, 194, 1) 0%,
+    rgba(126, 129, 136, 1) 66%,
+    rgba(117, 117, 125, 1) 100%
+  );
+}
+/*animation and transform*/
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  font-size: 70px;
+  transform: translate(-50% -50%);
+  -webkit-transform: translate(-50% -50%);
+  -moz-transform: translate(-50% -50%);
+  -ms-transform: translate(-50% -50%);
+  -o-transform: translate(-50% -50%);
+  text-transform: uppercase;
+  animation: 17s linear infinite data1;
+  -webkit-animation: 17s linear infinite data1;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+h1::before {
+  content: attr(data-text1);
+  position: absolute;
+  transform-origin: bottom;
+  top: 0;
+  left: 0;
+  line-height: 0.9;
+  transform: rotateX(180deg);
+  -webkit-transform: translate(-50%-50%);
+  -moz-transform: translate(-50%-50%);
+  -ms-transform: translate(-50%-50%);
+  -o-transform: translate(-50%-50%);
+  background: linear-gradient(0deg, #fff 0, transparent 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 0.5;
+}
+
+@keyframes data1 {
+  from {
+    margin-left: 50%;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+h2 {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  font-size: 70px;
+  transform: translate(-40%, -50%);
+  -webkit-transform: translate(-40%, -50%);
+  -moz-transform: translate(-40%, -50%);
+  -ms-transform: translate(-40%, -50%);
+  -o-transform: translate(-40%, -50%);
+  text-transform: uppercase;
+  animation: 31s linear infinite data2;
+  transform: translate(-50%, -50%);
+  -webkit-animation: 31s linear infinite data2;
+}
+
+h2::before {
+  content: attr(data-text2);
+  position: absolute;
+  transform-origin: bottom;
+  top: 0;
+  left: 0;
+  line-height: 0.9;
+  transform: rotateX(180deg);
+  -webkit-transform: translate(-50%-50%);
+  -moz-transform: translate(-50%-50%);
+  -ms-transform: translate(-50%-50%);
+  -o-transform: translate(-50%-50%);
+  background: linear-gradient(0deg, #fff 0, transparent 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 0.5;
+}
+
+@keyframes data2 {
+  from {
+    top: 200px;
+  }
+  to {
+    bottom: 100%;
+  }
+}
+
+h3 {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  font-size: 70px;
+  transform: translate(-40%, -50%);
+  -webkit-transform: translate(-40%, -50%);
+  -moz-transform: translate(-40%, -50%);
+  -ms-transform: translate(-40%, -50%);
+  -o-transform: translate(-40%, -50%);
+  text-transform: uppercase;
+  animation: 20s linear infinite data3;
+  -webkit-animation: 20s linear infinite data3;
+}
+
+h3::before {
+  content: attr(data-text3);
+  position: absolute;
+  transform-origin: bottom;
+  top: 0;
+  left: 0;
+  line-height: 0.9;
+  transform: rotateX(180deg);
+  -webkit-transform: translate(-50%-50%);
+  -moz-transform: translate(-50%-50%);
+  -ms-transform: translate(-50%-50%);
+  -o-transform: translate(-50%-50%);
+  background: linear-gradient(0deg, #fff 0, transparent 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 0.5;
+}
+
+@keyframes data3 {
+  from {
+    margin-top: 100%;
+  }
+  to {
+    top: 200px;
+  }
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgb(200, 197, 194);
+  background: radial-gradient(
+    circle,
+    rgba(200, 197, 194, 1) 0%,
+    rgba(126, 129, 136, 1) 66%,
+    rgba(117, 117, 125, 1) 100%
+  );
+  text-align: center;
+}
