@@ -19,7 +19,8 @@ body {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-  animation: rotate-center 0.6s ease-in-out both;
+  animation: rotate-center 5s ease-in-out both;
+  -webkit-animation: rotate-center 5s ease-in-out both;
 }
 
 @keyframes rotate-center {
